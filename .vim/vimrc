@@ -1,0 +1,35 @@
+" Custom Vim configuration
+
+set number
+set shiftwidth=4  " 1 tab === 4 spaces
+set tabstop=2     " tab spacing
+set ai            " Auto indent
+set encoding=UTF-8
+map <C-b> :NERDTreeToggle<CR>
+
+call plug#begin('~/.vim/Plug')
+
+" Themes
+Plug 'mhartington/oceanic-next'
+Plug 'jnurmine/zenburn' "Theme plugin
+Plug 'ryanoasis/vim-devicons' "Icons for filetypes
+Plug 'vim-airline/vim-airline' "Status bar
+Plug 'vim-airline/vim-airline-themes' "Applicable themes
+
+" Language Syntax Support
+Plug 'pangloss/vim-javascript' "JS highlighting
+Plug 'mxw/vim-jsx' "JSX syntax highlighting
+Plug 'jparise/vim-graphql' "graphql syntax highlighting
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" Tools
+Plug 'mitermayer/vim-prettier'
+Plug 'jiangmiao/auto-pairs' "Autocomplete brackets. 
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive' "Git tools
+
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'} "Nerdtree
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocompletion
+
+" All of your Plugins must be added before the following line
+call plug#end()            " required
