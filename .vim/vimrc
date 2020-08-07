@@ -10,8 +10,7 @@ map <C-b> :NERDTreeToggle<CR>
 call plug#begin('~/.vim/Plug')
 
 " Themes
-Plug 'mhartington/oceanic-next'
-Plug 'jnurmine/zenburn' "Theme plugin
+Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons' "Icons for filetypes
 Plug 'vim-airline/vim-airline' "Status bar
 Plug 'vim-airline/vim-airline-themes' "Applicable themes
@@ -30,6 +29,17 @@ Plug 'tpope/vim-fugitive' "Git tools
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'} "Nerdtree
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocompletion
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-rmarkdown'
+
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
+
+" Render rmarkdown by pressing F5
+autocmd Filetype rmd map <F5> :!R -e "rmarkdown::render('<c-r>%')"<enter>
+
+colorscheme nord
+
+let g:airline_powerline_fonts = 1 "for vim-airline symbols
+let g:tex_conceal = "admg"
